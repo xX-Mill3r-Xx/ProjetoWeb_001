@@ -17,8 +17,8 @@ namespace ProjetoWebMVC.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
-
+            ViewData["Message"] = "Vasco Marcenaria.";
+            ViewData["Email"] = "millermartinsvasco1@gmail.com";
             return View();
         }
 
