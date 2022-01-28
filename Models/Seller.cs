@@ -9,17 +9,23 @@ namespace ProjetoWebMVC.Models
     {
         public int Id { get; set; }
 
+        [Required(ErrorMessage = "Campo Obrigatorio")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "O numero de caracteres deve ficar entre {2} e {1}")]
         [Display(Name = "Nome Funcionário")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage = "Campo Obrigatorio")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "Campo Obrigatorio")]
         [Display(Name = "Nascimento")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
 
+        [Required(ErrorMessage = "Campo Obrigatorio")]
+        [Range(100.0, 50000.0, ErrorMessage = "Salario deve ficar entre {1} e {2}")]
         [Display(Name = "Salário")]
         [DisplayFormat(DataFormatString = "{0:F2}")]
         public double BaseSalary { get; set; }
